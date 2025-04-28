@@ -19,8 +19,10 @@ class AnimateGradiendDescent:
     def update(self,frame):
         self.model.descent()
         error=self.model.metric()
+        liklihood=self.model.get_liklihood()
+
         
-        self.ax.set_title(f'r2score {error}')
+        self.ax.set_title(f'r2score {error}  liklihood {liklihood}')
 
         self.line.set_data(self.X[:,0], self.model.predict(self.X))
         
@@ -29,7 +31,7 @@ class AnimateGradiendDescent:
     def update_error(self,frame):
         error=self.model.error()
         self.recorded_errors.append(error)
-        self.error_ax.set_title(f'error {error}')
+        self.error_ax.set_title(f'error {error} ')
         self.error_line.set_data(range(len(self.recorded_errors)),self.recorded_errors)
         self.error_ax.set_xlim(0, len(self.recorded_errors))
         self.error_ax.set_ylim(0, max(self.recorded_errors)+1)
