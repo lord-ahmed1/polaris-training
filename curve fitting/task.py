@@ -45,11 +45,11 @@ print(X.T)
 
 x_poly=poly.fit_transform(X)[:,1:]
 print('x_poly',x_poly)
-Y=(2*(np.power(X,3))-10*X+10).reshape(1,-1)[0]
+Y=(X**3-3*X+10).reshape(1,-1)[0]
 print('y',Y)
 
 
-model=Model(x_poly,Y,learning_rate=0.000000007)
+model=Model(x_poly,Y,learning_rate=0.000000003)
 AnimateGradiendDescent([x_poly,Y],model).animate()
 
 
