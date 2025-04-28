@@ -44,33 +44,7 @@ class Model:
 
 
 
-# p=Population("PHL")
-
-# X=p.years[:-1]
-# Y=p.population_rate_of_change()
-
-
-# # Y=Y/np.max(Y)
-# # X=X/np.max(X)
-
-
-# Y=(Y-np.average(Y))/np.std(Y)
-# X=(X-np.average(X))/np.std(X)
-
-# poly=PolynomialFeatures(degree=2)
-# X=poly.fit_transform(X)[:,1:]
-# Y=Y.reshape(1,-1)[0]
-
-
-# model=Model(X,Y,learning_rate=0.03)
-# AnimateGradiendDescent([X,Y],model).animate()
-
-
-
-
-
-
-p=Population("RUS")
+p=Population("PHL")
 
 X=p.years[:-1]
 Y=p.population_rate_of_change()
@@ -83,10 +57,36 @@ Y=p.population_rate_of_change()
 Y=(Y-np.average(Y))/np.std(Y)
 X=(X-np.average(X))/np.std(X)
 
-poly=PolynomialFeatures(degree=5)
+poly=PolynomialFeatures(degree=2)
 X=poly.fit_transform(X)[:,1:]
 Y=Y.reshape(1,-1)[0]
 
 
 model=Model(X,Y,learning_rate=0.03)
 AnimateGradiendDescent([X,Y],model).animate()
+
+
+
+
+
+
+# p=Population("RUS")
+
+# X=p.years[:-1]
+# Y=p.population_rate_of_change()
+
+
+# # Y=Y/np.max(Y)
+# # X=X/np.max(X)
+
+
+# Y=(Y-np.average(Y))/np.std(Y)
+# X=(X-np.average(X))/np.std(X)
+
+# poly=PolynomialFeatures(degree=5)
+# X=poly.fit_transform(X)[:,1:]
+# Y=Y.reshape(1,-1)[0]
+
+
+# model=Model(X,Y,learning_rate=0.03)
+# AnimateGradiendDescent([X,Y],model).animate()
