@@ -19,13 +19,8 @@ class Model:
         return np.sum((self.predict(self.X)-self.Y)**2)/self.N
         
     def descent(self):
-        de_by_dm= np.sum(self.X.T*(self.predict(self.X)-self.Y) ,axis=1)/self.N
-        de_by_dc= np.sum(self.predict(self.X)-self.Y )/self.N
-     
-
-        self.m=self.m-(self.learning_rate*de_by_dm)
-        self.c=self.c-(self.learning_rate*de_by_dc)
-
+        pass
+       
     def predict(self,X):
       
         prediction= (self.m@X.T)+self.c

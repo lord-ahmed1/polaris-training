@@ -19,15 +19,7 @@ class Model:
         return r2_score(self.Y,self.predict(self.X))
         
     def descent(self):
-        de_by_dm= np.sum(self.X.T*(self.predict(self.X)-self.Y) ,axis=1)/self.N
-        de_by_dc= np.sum(self.predict(self.X)-self.Y )/self.N
-        print('de_by_dm',de_by_dm)
-        print('de_by_dc',de_by_dc)
-
-        self.m=self.m-(self.learning_rate*de_by_dm)
-        print('m',self.m)
-        self.c=self.c-(self.learning_rate*de_by_dc)
-        print('c',self.c)
+        pass
 
     def predict(self,X):
       
